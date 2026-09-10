@@ -1,0 +1,54 @@
+import json
+print(json.dumps(information[0], indent=2))
+
+{
+  "flight_date": "2026-08-08",
+  "flight_status": "scheduled",
+  "departure": {
+    "airport": "Gen J A Anzoategui",
+    "timezone": "America/Caracas",
+    "iata": "BLA",
+    "icao": "SVBC",
+    "terminal": null,
+    "gate": null,
+    "delay": 30,
+    "scheduled": "2026-08-08T17:00:00+00:00",
+    "estimated": "2026-08-08T17:00:00+00:00",
+    "actual": "2026-08-08T19:07:00+00:00",
+    "estimated_runway": "2026-08-08T19:07:00+00:00",
+    "actual_runway": "2026-08-08T19:07:00+00:00"
+  },
+  "arrival": {
+    "airport": "Barajas",
+    "timezone": "Europe/Madrid",
+    "iata": "MAD",
+    "icao": "LEMD",
+    "terminal": "1",
+    "gate": null,
+    "baggage": "I107",
+    "scheduled": "2026-08-09T08:35:00+00:00",
+    "delay": 29,
+    "estimated": "2026-08-09T09:04:00+00:00",
+    "actual": null,
+    "estimated_runway": null,
+    "actual_runway": null
+  },
+  "airline": {
+    "name": "Hi Fly",
+    "iata": "QL",
+    "icao": "LER"
+  },
+  "flight": {
+    "number": "2920",
+    "iata": "QL2920",
+    "icao": "LER2920",
+    "codeshared": null
+  },
+  "aircraft": {
+    "registration": null,
+    "iata": null,
+    "icao": null,
+    "icao24": "4D2505"
+  },
+  "live": null
+}

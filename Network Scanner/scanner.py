@@ -36,6 +36,8 @@ def scan_network(prefix):
     for sent, received in answered:
         print(f"IP: {received.psrc:<15} |  MAC: {received.hwsrc}")
 
+#============================================================================================================
+
 options = address()
 
 if options.target:
