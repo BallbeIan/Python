@@ -11,7 +11,7 @@ def address():
                         help="Set the range of ip's separated by --> x-x")
     options = parser.parse_args()
 
-    if not options.target and not options.network and not options.iprange:
+    if not options:
         parser.error("[-] Please specify and IP Address or Addresses, use --help for more info.")
     
     return options
@@ -30,7 +30,7 @@ def get_local_prefix():
 
 def scan(ip):
     icmp = IP(dst=ip)/ICMP()
-    resp = sr1(icmp, timeout=10)
+    resp = sr1(icmp, timeout=2)
     if resp == None:
         print(f"{ip} is down")
     else:
