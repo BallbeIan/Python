@@ -149,7 +149,6 @@ def numpy_visualizer(obj):
 
 # Pass the function to the default parameter
 json_data = json.dumps(weights, default=numpy_visualizer)
-print(json_data)
 
 with open("weights.json", "w") as file:
     json.dump(json_data, file, indent=4)
