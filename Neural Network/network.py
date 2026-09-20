@@ -122,7 +122,7 @@ def learning_process(X, Y, input, hidden, output, epochs, learning_rate):
         
         # Print loss every 100 epochs.
         if i % 100 == 0:
-            print(f"Epoch {i}, Loss: {loss:.4f}")
+            print(f"---> Epoch {i}, Loss: {loss:.4f}")
     
     return weights
 
@@ -139,7 +139,7 @@ def predict(X, weights):
     return predictions
 
 predictions = predict(X, trained_weights)
-print(f"Predictions: {predictions}")
+print(f"---> Predictions: {predictions}")
 
 def numpy_visualizer(obj):
     if isinstance(obj, np.ndarray):
@@ -150,5 +150,7 @@ def numpy_visualizer(obj):
 # Pass the function to the default parameter
 json_data = json.dumps(weights, default=numpy_visualizer)
 
-with open("weights.json", "w") as file:
-    json.dump(json_data, file, indent=4)
+with open("weights.json", "w", encoding="utf-8") as file:
+    json.dump(trained_weights, file, default=numpy_visualizer, indent=4)
+
+print("---> Export complete")
