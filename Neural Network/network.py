@@ -1,4 +1,5 @@
 import numpy as np
+import json
 
 # Setting the networks structure
 input = 2 
@@ -137,6 +138,18 @@ def predict(X, weights):
     predictions = A2 > 0.5
     return predictions
 
-
 predictions = predict(X, trained_weights)
 print(f"Predictions: {predictions}")
+
+def numpy_visualizer(obj):
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    raise TypeError(f"Type {type(obj)} not serializable")
+
+
+# Pass the function to the default parameter
+json_data = json.dumps(weights, default=numpy_visualizer)
+print(json_data)
+
+with open("weights.json", "w") as file:
+    json.dump(json_data, file, indent=4)
